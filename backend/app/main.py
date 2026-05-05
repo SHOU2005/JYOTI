@@ -17,9 +17,14 @@ os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
 
 app = FastAPI(title="InterviewIQ API", version="1.0.0")
 
+_origins = settings.cors_origins_list
+if "*" in _origins:
+    _origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list,
+    allow_origins=_origins if _origins != ["*"] else ["*"],
+    allow_origin_regex=r"https://.*\.vercel\.app" if _origins != ["*"] else None,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
