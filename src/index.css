@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark; /* Default to dark as per premium req */
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0f0f13; /* Deep dark background */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #060608;
+  color: #ffffff;
+}
+
+@theme {
+  --color-primary: #3b82f6; 
+  --color-secondary: #8b5cf6;
+  --color-accent: #f472b6;
+  
+  /* Glassmorphism utilities could be added here or just use utility classes */
+}
